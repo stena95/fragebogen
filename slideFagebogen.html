@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- <script src="jquery-3.3.1.min.js"></script> -->
+  <script src="script_fragebogen.js"></script>
+  <title>Document</title>
+  <style media="screen">
+    /* farben{
+      #BFBFBF
+      #7F7F7F
+      #FFFFFF
+      #404040
+      #E5E5E5
+    } */
+    body{
+      text-align: center;
+      font-family: "Segoe UI";
+      background-color: #BFBFBF;
+      /* background-color: #7F7F7F; */
+    }
+
+    h1{
+      font-size: 5em;
+      /* background-color: #C40E00; */
+      /* color: #FFF200; */
+      color: #C40E00;
+      /* border: 10px solid #FF5700; */
+      margin: 0px;
+      margin-top: 10px;
+    }
+
+    #p1{color: #C40E00;background-color: #FFF200;border-radius: 50%;width: 1.25em;}
+    #a2{color: #E86708;background-color: #E8B600;border-radius: 50%;width: 1.25em;}
+    /* #r3{color: #FF9304;background-color: #FFF200;} */
+    #r3{color: #FFFFFF;background-color: #FF9304;border-radius: 50%;width: 1.25em;}
+    #e4{color: #E8B600;background-color: #E86708;border-radius: 50%;width: 1.25em;}
+    #a5{color: #FFF200;background-color: #C40E00;border-radius: 50%;width: 1.25em;}
+
+    h3{border-bottom: 2px solid #FFFFFF;}
+
+    #slideFragen{
+      padding: 40px;
+      background-color: #404040;
+      /* color: #E5E5E5; */
+      color: #FFFFFF;
+    }
+    /* .col{
+    background-color: #404040;
+    color: #E5E5E5;
+    color: #FFFFFF;
+    } */
+
+    .progress, #prozent {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    /* right:0px; */
+    width: calc(100% - 20px);
+    /* height: 20px; */
+    }
+    .col-md-12{
+      /* color: #00E306; */
+      color: #00B200;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    #slideFragen{
+      margin-top: 3em;
+    }
+
+    .carousel-control-prev, .carousel-control-next{
+      width: 20px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div id="frage">
+    <!-- <h1>Parea</h1> -->
+    <h1>
+      <label id="p1">P</label>
+      <label id="a2">A</label>
+      <label id="r3">R</label>
+      <label id="e4">E</label>
+      <label id="a5">A</label>
+    </h1>
+    <!--Der häufigste Grund eine Veranstaltung/Event/Party zu besuchen?
+      * Gutes Publikum
+      * Musik, Essen
+      * Langeweile
+      * Kontakte knüpfen
+      -->
+    <div id="slideFragen" class="carousel slide" data-ride="carousel" data-interval="false">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#slideFragen" data-slide-to="0" class="active"></li>
+        <li data-target="#slideFragen" data-slide-to="1"></li>
+        <li data-target="#slideFragen" data-slide-to="2"></li>
+        <li data-target="#slideFragen" data-slide-to="3"></li>
+        <li data-target="#slideFragen" data-slide-to="4"></li>
+        <li data-target="#slideFragen" data-slide-to="5"></li>
+        <li data-target="#slideFragen" data-slide-to="6"></li>
+        <li data-target="#slideFragen" data-slide-to="7"></li>
+        <li data-target="#slideFragen" data-slide-to="8"></li>
+        <li data-target="#slideFragen" data-slide-to="9"></li>
+        <li data-target="#slideFragen" data-slide-to="10"></li>
+        <li data-target="#slideFragen" data-slide-to="11"></li>
+        <li data-target="#slideFragen" data-slide-to="12"></li>
+        <li data-target="#slideFragen" data-slide-to="13"></li>
+        <li data-target="#slideFragen" data-slide-to="14"></li>
+        <li data-target="#slideFragen" data-slide-to="15"></li>
+        <li data-target="#slideFragen" data-slide-to="16"></li>
+      </ul>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="col">
+            <h3 id="frage1">1.	Wie wirst du üblicherweise auf Veranstaltungen/Partys aufmerksam?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort1" type="radio" name="frage1" value="antwort1">
+                <label class="custom-control-label" for="antwort1">Über Facebook</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort2" type="radio" name="frage1" value="antwort2">
+                <label class="custom-control-label" for="antwort2">Über WhatsApp</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort3" type="radio" name="frage1" value="antwort3">
+                <label class="custom-control-label" for="antwort3">Über andere Social Media Plattformen</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort4" type="radio" name="frage1" value="antwort4">
+                <label class="custom-control-label" for="antwort4">Über persönliche Kontakte</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage2">2.	Würdest du gerne mehr über bevorstehende Veranstaltungen /Partys, außerhalb von Facebook, wissen wollen?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort5" type="radio" name="frage2" value="antwort5">
+                <label class="custom-control-label" for="antwort5">Ja</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort6" type="radio" name="frage2" value="antwort6">
+                <label class="custom-control-label" for="antwort6">Nein</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort7" type="radio" name="frage2" value="antwort7">
+                <label class="custom-control-label" for="antwort7">Ich habe keinen Facebook-Account</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage3">3.	Planst du gerne Veranstaltung/Partys/Meetings?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort8" type="radio" name="frage3" value="antwort8">
+                <label class="custom-control-label" for="antwort8">Ja, das macht mir Spaß</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort9" type="radio" name="frage3" value="antwort9">
+                <label class="custom-control-label" for="antwort9">Nein, ich plane nie Veranstaltungen / Partys, weil es mir zu aufwendig ist</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort10" type="radio" name="frage3" value="antwort10">
+                <label class="custom-control-label" for="antwort10">Nein, ich plane aus anderen Gründen nie Veranstaltungen /Partys</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort11" type="radio" name="frage3" value="antwort11">
+                <label class="custom-control-label" for="antwort11">Manchmal</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage4">4.	Wie bevorzugst du es Veranstaltungen zu planen?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort12" type="radio" name="frage4" value="antwort12">
+                <label class="custom-control-label" for="antwort12">Über WhatsApp</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort13" type="radio" name="frage4" value="antwort13">
+                <label class="custom-control-label" for="antwort13">Über E-Mail</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort14" type="radio" name="frage4" value="antwort14">
+                <label class="custom-control-label" for="antwort14">Über die Veranstaltungsfunktion bei Facebook</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort15" type="radio" name="frage4" value="antwort15">
+                <label class="custom-control-label" for="antwort15">Über persönliche Kontakte</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <!-- <h3 id="frage4">Wie bevorzugst du es Veranstaltungen zu planen?</h3> -->
+            <div class="form-group">
+              <h3 id="frage5"><label for="antwort16">5. Bevorzugst du andere Plattformen um Veranstaltungen zu planen (optional)</label></h3>
+              <textarea class="form-control" rows="5" id="antwort16"></textarea>
+            </div>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage6">6.	Wie sehr bist du zufrieden damit Veranstaltungen über WhatsApp, Facebook oder andere Social-Media-Kanäle zu organisieren?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort17" type="radio" name="frage6" value="antwort17">
+                <label class="custom-control-label" for="antwort17">Sehr zufrieden. WhatsApp, Facebook, etc. reichen mir völlig aus</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort18" type="radio" name="frage6" value="antwort18">
+                <label class="custom-control-label" for="antwort18">Zufrieden. Ich kann grundsätzlich alles gut planen</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort19" type="radio" name="frage6" value="antwort19">
+                <label class="custom-control-label" for="antwort19">Nicht besonders zufrieden. Es gibt Aspekte daran, die mich stören</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort20" type="radio" name="frage6" value="antwort20">
+                <label class="custom-control-label" for="antwort20">Gar nicht zufrieden</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage7">7.	Würdest du eine App/ Website für Veranstaltungsplanung benutzen?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort21" type="radio" name="frage7" value="antwort21">
+                <label class="custom-control-label" for="antwort21">Ja, das wäre praktisch</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort22" type="radio" name="frage7" value="antwort22">
+                <label class="custom-control-label" for="antwort22">Nein, ich benutze bereits andere Kanäle bei der Planung</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort23" type="radio" name="frage7" value="antwort23">
+                <label class="custom-control-label" for="antwort23">Nein, da ich nie wirklich Veranstaltungen/ Partys plane</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort24" type="radio" name="frage7" value="antwort24">
+                <label class="custom-control-label" for="antwort24">Vielleicht, wenn es wirklich einfacher wäre eine Veranstaltung/Party zu planen</label>
+              </div>
+            </form>
+          </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage8">8.	Gibt es deiner Meinung nach bereits ausreichend zufriedenstellende Möglichkeiten Veranstaltungen online/ über das Smartphone zu planen?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort25" type="radio" name="frage8" value="antwort25">
+                <label class="custom-control-label" for="antwort25">Ja, ich finde es gibt bereits gute Möglichkeiten Veranstaltungen/ Partys online bzw. über das Smartphone zu planen</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort26" type="radio" name="frage8" value="antwort26">
+                <label class="custom-control-label" for="antwort26">Nein, ich finde es gibt nicht ausreichend gute Möglichkeiten Veranstaltungen/ Partys online bzw. über das Smartphone zu planen</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort27" type="radio" name="frage8" value="antwort27">
+                <label class="custom-control-label" for="antwort27">Ich plane Veranstaltungen/ Partys nicht über Social Media/ über mein Smartphone</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage9">9.	Was ist für dich besonders relevant bei der Planung einer Veranstaltung / Party?</h3>
+            <form>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort28" type="checkbox" name="frage9" value="antwort28">
+                <label class="custom-control-label" for="antwort28">Einen Überblick über die Anzahl meiner Gäste zu haben</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort29" type="checkbox" name="frage9" value="antwort29">
+                <label class="custom-control-label" for="antwort29">Zu sehen, wie viele Personen zugesagt oder abgesagt haben</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort30" type="checkbox" name="frage9" value="antwort30">
+                <label class="custom-control-label" for="antwort30">Die Location/ den Veranstaltungsort zu organisieren und bekannt zu geben</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort31" type="checkbox" name="frage9" value="antwort31">
+                <label class="custom-control-label" for="antwort31">Einen Überblick über meine Ausgaben zu haben.</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort32" type="checkbox" name="frage9" value="antwort32">
+                <label class="custom-control-label" for="antwort32">Eine Übersicht darüber zu haben, wieviel Getränke und Snacks organisiert werden müssen</label>
+              </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" id="antwort33" type="checkbox" name="frage9" value="antwort33">
+                  <label class="custom-control-label" for="antwort33">Meine Musik im Voraus zu planen</label>
+                </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage10">10.	Ist es dir wichtig, Fotos der Veranstaltungen/ Partys, die du besucht hast mit anderen via Social Media zu teilen?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                  <input class="custom-control-input" id="antwort34" type="radio" name="frage10" value="antwort34">
+                  <label class="custom-control-label" for="antwort34">Ja, das ist mir schon wichtig</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort35" type="radio" name="frage10" value="antwort35">
+                <label class="custom-control-label" for="antwort35">Nein, das ist mir nicht wichtig</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort36" type="radio" name="frage10" value="antwort36">
+                <label class="custom-control-label" for="antwort36">Ab und zu, wenn es gute Fotos sind</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage11">11.	Wie wichtig ist dir der Umgang mit deinen persönlichen Daten bei der Verwendung einer App / im Internet?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort37" type="radio" name="frage11" value="antwort37">
+                <label class="custom-control-label" for="antwort37">Wichtig, daher finde ich es lästig Veranstaltungen auf Facebook zu planen</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort38" type="radio" name="frage11" value="antwort38">
+                <label class="custom-control-label" for="antwort38">Wichtig, daher würde ich gerne kaum persönliche Daten angeben, um eine Veranstaltung planen zu können</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort39" type="radio" name="frage11" value="antwort39">
+                <label class="custom-control-label" for="antwort39">Nicht besonders wichtig</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort40" type="radio" name="frage11" value="antwort40">
+                <label class="custom-control-label" for="antwort40">Gar nicht wichtig</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage12">12.	Welche Funktionen bei der Planung einer Veranstaltung/ Party in einer App fändest du wünschenswert? Hier sind mehrere Antwortmöglichkeiten erlaubt.</h3>
+            <form>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort41" type="checkbox" name="frage12" value="antwort41">
+                <label class="custom-control-label" for="antwort41">Das Hinzufügen der Partygäste über einen Link/ über Telefonnummer/ über E-Mail (kein Facebook Account notwendig)</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort42" type="checkbox" name="frage12" value="antwort42">
+                <label class="custom-control-label" for="antwort42">Den Veranstaltungs-/ Party Ort über Google Maps einzubinden, um einen Überblick der Umgebung zu gewinnen</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort43" type="checkbox" name="frage12" value="antwort43">
+                <label class="custom-control-label" for="antwort43">Gäste zu- bzw. absagen lassen zu können</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort44" type="checkbox" name="frage12" value="antwort44">
+                <label class="custom-control-label" for="antwort44">Die gesamte Anzahl meiner Gäste zu sehen</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort45" type="checkbox" name="frage12" value="antwort45">
+                <label class="custom-control-label" for="antwort45">Eine Chat Funktion</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort46" type="checkbox" name="frage12" value="antwort46">
+                <label class="custom-control-label" for="antwort46">Die Möglichkeit eine Liste öffentlich zu machen, was noch für die Veranstaltung benötigt wird. So können die Gäste sich einen Überblick verschaffen, was sie mitbringen können</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort47" type="checkbox" name="frage12" value="antwort47">
+                <label class="custom-control-label" for="antwort47">Eine Budget-Planung als Übersicht meiner Ausgaben</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort48" type="checkbox" name="frage12" value="antwort48">
+                <label class="custom-control-label" for="antwort48">Eine Seite mit den „Hard-Facts“ über die Veranstaltung zu haben (Ort, Datum, Zeit, Adresse etc.) um es übersichtlich zu gestalten</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort49" type="checkbox" name="frage12" value="antwort49">
+                <label class="custom-control-label" for="antwort49">Ein ansprechendes Layout, um Stimmung zu erzeugen</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="antwort50" type="checkbox" name="frage12" value="antwort50">
+                <label class="custom-control-label" for="antwort50">Ein Motto auswählen zu können</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage13">13. Dein Geschlecht?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort51" type="radio" name="frage13" value="antwort51">
+                <label class="custom-control-label" for="antwort51">Weiblich</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort52" type="radio" name="frage13" value="antwort52">
+                <label class="custom-control-label" for="antwort52">Männlich</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort53" type="radio" name="frage13" value="antwort53">
+                <label class="custom-control-label" for="antwort53">Sonstige</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage14">14. Wie alt bist du?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort54" type="radio" name="frage14" value="antwort54">
+                <label class="custom-control-label" for="antwort54">15-19 Jahre alt</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort55" type="radio" name="frage14" value="antwort55">
+                <label class="custom-control-label" for="antwort55">20-29 Jahre alt</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort56" type="radio" name="frage14" value="antwort56">
+                <label class="custom-control-label" for="antwort56">30+ Jahre alt</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage15">15.	Wie viel ist angemessen, bei der Planung einer Veranstaltung auszugeben?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort57" type="radio" name="frage15" value="antwort57">
+                <label class="custom-control-label" for="antwort57">max. 10€</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort58" type="radio" name="frage15" value="antwort58">
+                <label class="custom-control-label" for="antwort58">max. 20€</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort59" type="radio" name="frage15" value="antwort59">
+                <label class="custom-control-label" for="antwort59">max. 30€</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort60" type="radio" name="frage15" value="antwort60">
+                <label class="custom-control-label" for="antwort60">30€ oder mehr</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="col">
+            <h3 id="frage16">16.	Wie oft besuchst du Veranstaltungen/ Partys pro Monat?</h3>
+            <form>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort61" type="radio" name="frage16" value="antwort61">
+                <label class="custom-control-label" for="antwort61">1 - 3 mal</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort62" type="radio" name="frage16" value="antwort62">
+                <label class="custom-control-label" for="antwort62">4 - 7 mal</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input class="custom-control-input" id="antwort63" type="radio" name="frage16" value="antwort63">
+                <label class="custom-control-label" for="antwort63">8 mal oder öfters</label>
+              </div>
+            </form>
+            </br></br>
+          </div>
+        </div>
+
+      </div><!-- carousel-inner -->
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#slideFragen" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#slideFragen" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+
+    </div>
+    <br>
+
+    <!--2.) Der häufigste Grund eine Veranstaltung/Event/Party zu besuchen?
+      * Gutes Publikum
+      * Musik, Essen
+      * Langeweile
+      * Kontakte knüpfen
+      -->
+
+
+    <!--
+    <div class="col">
+      <h3 id="frage13"></h3>
+      <form>
+        <div class="custom-control custom-radio">
+          <input class="custom-control-input" id="antwort49"  type="radio"  value="antwort49">
+          <label class="custom-control-label" for="antwort49"></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input class="custom-control-input" id="antwort50"  type="radio"  value="antwort50">
+          <label class="custom-control-label" for="antwort50"></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input class="custom-control-input" id="antwort51"  type="radio"  value="antwort51">
+          <label class="custom-control-label" for="antwort51"></label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input class="custom-control-input" id="antwort52"  type="radio"  value="antwort52">
+          <label class="custom-control-label" for="antwort52"></label>
+        </div>
+      </form>
+   </div><br>
+    </fieldset>-->
+  </div>
+  <div class="progress">
+    <div id="prozent" class="progress-bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+  </div>
+  <button type="button" name="button" id="sendBtn" class="btn btn-success btn-lg btn-block">Senden</button>
+</body>
+
+</html>
